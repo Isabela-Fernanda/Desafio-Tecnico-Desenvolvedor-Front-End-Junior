@@ -1,6 +1,7 @@
 import './App.css';
 
 import { useUsers } from './hooks/useUsers.ts';
+import UserCard from './components/UserCard/UserCard.tsx';
 
 function App() {
   const { users, isLoading, error } = useUsers();
@@ -31,15 +32,7 @@ function App() {
         {!isLoading && !error && (
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {users.map((user) => (
-              <article key={user.id} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                <h2 className="font-semibold text-slate-800">
-                  {user.name}
-                </h2>
-
-                <p className="mt-2 text-sm text-slate-500">
-                  {user.email}
-                </p>
-              </article>
+              <UserCard key={user.id} user={user} />
             ))}
           </div>
         )}
