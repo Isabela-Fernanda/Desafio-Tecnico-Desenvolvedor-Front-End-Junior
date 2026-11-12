@@ -1,10 +1,17 @@
 import './App.css';
 
+import { useState } from 'react';
 import { useUsers } from './hooks/useUsers.ts';
+import SearchBar from './components/SearchBar/SearchBar.tsx';
 import UserCard from './components/UserCard/UserCard.tsx';
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
   const { users, isLoading, error } = useUsers();
+
+  const filteredUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
+  );
 
   return (
     <main className='min-h-screen bg-slate-50'>
@@ -30,11 +37,21 @@ function App() {
         )}
 
         {!isLoading && !error && (
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {users.map((user) => (
-              <UserCard key={user.id} user={user} />
-            ))}
-          </div>
+          <>
+            <SearchBar value={searchTerm} onChange={setSearchTerm} />
+
+            {filteredUsers.length > 0 ? (
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {filteredUsers.map((user) => (
+                  <UserCard key={user.id} user={user} />
+                ))}
+              </div>
+            ) : (
+              <p className="mt-8 text-center text-slate-500">
+                Nenhum usuário encontrado.
+              </p>
+            )}
+          </>
         )}
       </div>
     </main>
