@@ -1,6 +1,10 @@
-# Desafio Técnico – Desenvolvedor Front-End Júnior
+# User Directory
 
-Aplicação desenvolvida como parte de um desafio técnico para uma vaga de Desenvolvedor Front-End Júnior. O projeto consome a API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com/) para exibir uma lista de usuários e permitir a consulta de seus detalhes.
+Aplicação desenvolvida como parte do desafio técnico para uma vaga de Desenvolvedor Front-End Júnior.
+
+O **User Directory** consome a API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com/) para exibir uma lista de usuários, permitindo pesquisar nomes e consultar informações detalhadas de cada pessoa.
+
+**[Acessar demonstração](https://isabela-fernanda.github.io/Desafio-Tecnico-Desenvolvedor-Front-End-Junior/)**
 
 ## Funcionalidades
 
@@ -10,7 +14,8 @@ Aplicação desenvolvida como parte de um desafio técnico para uma vaga de Dese
 - Exibição de nome completo, e-mail, telefone, empresa e cidade.
 - Indicador visual durante o carregamento dos dados.
 - Tratamento e exibição de erros durante a requisição.
-- Fechamento do modal pelo botão ou pela tecla `Escape`.
+- Fechamento do modal pelo botão, clique fora ou tecla `Escape`.
+- Interface responsiva para diferentes tamanhos de tela.
 
 ## Tecnologias utilizadas
 
@@ -36,13 +41,13 @@ Aplicação desenvolvida como parte de um desafio técnico para uma vaga de Dese
 Clone o repositório:
 
 ```bash
-git clone https://github.com/Isabela-Fernanda/Desafio-Tecnico-Desenvolvedor-Front-End-Junior
+git clone https://github.com/Isabela-Fernanda/Desafio-Tecnico-Desenvolvedor-Front-End-Junior.git
 ```
 
 Entre na pasta do projeto:
 
 ```bash
-cd Desafio-Tecnico
+cd Desafio-Tecnico-Desenvolvedor-Front-End-Junior
 ```
 
 Instale as dependências:
@@ -63,16 +68,16 @@ O Vite disponibilizará um endereço local no terminal para acessar a aplicaçã
 
 Os testes automatizados foram desenvolvidos com Vitest e React Testing Library.
 
-Para executar os testes:
+Para executar os testes em modo de observação:
 
 ```bash
 npm run test
 ```
 
-Para executar uma vez, sem permanecer em modo de observação:
+Para executar os testes uma única vez:
 
 ```bash
-npm run test -- --run
+npm run test:run
 ```
 
 ### Cobertura dos testes
@@ -84,19 +89,33 @@ npm run test -- --run
 | UserDetails | Exibição dos detalhes e fechamento do modal |
 | useUsers | Estado inicial, carregamento e tratamento de erros |
 
+Atualmente, o projeto possui **10 testes automatizados**, distribuídos em 4 arquivos de teste.
+
 ## Outros comandos
+
+### Build de produção
 
 ```bash
 npm run build
 ```
 
-Gera a versão de produção da aplicação.
+Gera a versão de produção da aplicação na pasta `dist`.
+
+### Análise estática
 
 ```bash
 npm run lint
 ```
 
 Executa a análise estática do código com ESLint.
+
+### Visualização da versão de produção
+
+```bash
+npm run preview
+```
+
+Inicia um servidor local para visualizar a versão gerada pelo build.
 
 ## API utilizada
 
@@ -106,5 +125,18 @@ Os dados dos usuários são obtidos através do endpoint:
 
 ## Capturas de tela
 
-<!-- Adicione aqui capturas de tela da aplicação após incluí-las no repositório. -->
+### Desktop
 
+![Versão desktop](./screenshots/Desktop.png)
+
+![Busca de usuários](./screenshots/Busca.png)
+
+![Modal de detalhes aberto](./screenshots/Modal%20aberto.png)
+
+### Mobile
+
+![Versão mobile](./screenshots/Mobile.png)
+
+---
+
+Desenvolvido como parte do desafio técnico para Desenvolvedor Front-End Júnior.
