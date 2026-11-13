@@ -125,7 +125,7 @@ function App() {
               />
 
               {filteredUsers.length > 0 ? (
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div className="mt-6 grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2">
                   {filteredUsers.map((user) => (
                     <UserCard
                       key={user.id}
