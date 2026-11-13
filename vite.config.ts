@@ -3,6 +3,7 @@ import { defineConfig } from 'vitest/config'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  base: '/Desafio-Tecnico-Desenvolvedor-Front-End-Junior/',
   plugins: [react(), tailwindcss()],
   test: {
     environment: 'jsdom',
